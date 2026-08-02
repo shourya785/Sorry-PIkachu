@@ -8,6 +8,37 @@
 <title>Sorry Pikachu ⚡❤️</title>
 
 <style>
+    .choices{
+    display:flex;
+    justify-content:center;
+    gap:15px;
+    margin-top:20px;
+}
+
+
+.choices button{
+    padding:12px 20px;
+}
+
+
+#sadBox{
+    margin-top:20px;
+}
+
+
+.sad{
+    font-size:70px;
+    animation:shake 0.8s infinite;
+}
+
+
+@keyframes shake{
+    0%{transform:rotate(0);}
+    25%{transform:rotate(10deg);}
+    50%{transform:rotate(-10deg);}
+    75%{transform:rotate(10deg);}
+    100%{transform:rotate(0);}
+}
 .mascot{
     margin-bottom:15px;
     animation:bounce 2s infinite;
@@ -384,7 +415,18 @@ e.remove();
 
 setInterval(createEmoji,400);
 
+function sad(){
 
+document.getElementById("sadBox").style.display="block";
+
+}
+
+
+function forgive(){
+
+document.getElementById("sadBox").style.display="block";
+
+}
 </script>
 
 
