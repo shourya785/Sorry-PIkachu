@@ -1,92 +1,17 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
 
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Sorry Pikachu ⚡❤️</title>
+<title>Sorry Pikachu ❤️</title>
 
 <style>
-    .choices{
-    display:flex;
-    justify-content:center;
-    gap:15px;
-    margin-top:20px;
-    position:relative;
-z-index:5;     
-}
 
-
-.choices button{
-    padding:12px 20px;
-}
-
-
-#sadBox{
-    margin-top:20px;
-}
-
-
-.sad{
-    font-size:70px;
-    animation:shake 0.8s infinite;
-}
-
-
-@keyframes shake{
-    0%{transform:rotate(0);}
-    25%{transform:rotate(10deg);}
-    50%{transform:rotate(-10deg);}
-    75%{transform:rotate(10deg);}
-    100%{transform:rotate(0);}
-}
-.mascot{
-    margin-bottom:15px;
-    animation:bounce 2s infinite;
-}
-
-
-.ears{
-    font-size:35px;
-    color:#f5b400;
-}
-
-
-.face{
-    width:90px;
-    height:90px;
-    margin:auto;
-    background:#ffd92f;
-    border-radius:50%;
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    font-size:45px;
-    box-shadow:0 8px 20px rgba(255,180,0,.4);
-}
-
-
-.sign{
-    margin:15px auto;
-    background:white;
-    padding:10px 20px;
-    border-radius:15px;
-    width:max-content;
-    color:#ff5c93;
-    font-weight:bold;
-    box-shadow:0 5px 15px rgba(0,0,0,.1);
-}
-
-
-@keyframes bounce{
-
-50%{
-    transform:translateY(-12px);
-}
-
-}
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap');
+
 
 *{
     margin:0;
@@ -97,54 +22,48 @@ z-index:5;
 
 
 body{
-    min-height:100vh;
-    overflow-y:auto;
-    background:linear-gradient(135deg,#fff3a8,#ffd6e8);
-    display:flex;
-    justify-content:center;
-    align-items:flex-start;
-    padding:40px 0;
-}
 
+min-height:100vh;
 
-/* floating emojis */
+background:linear-gradient(135deg,#fff3a8,#ffd6e8);
 
-.float{
-    position:absolute;
-    bottom:-50px;
-    animation:up 8s linear infinite;
-}
+display:flex;
 
+justify-content:center;
 
-@keyframes up{
+align-items:center;
 
-0%{
-    transform:translateY(0) rotate(0deg);
-    opacity:0;
-}
+padding:20px;
 
-20%{
-    opacity:1;
-}
-
-100%{
-    transform:translateY(-110vh) rotate(360deg);
-    opacity:0;
-}
+overflow:auto;
 
 }
 
 
+
+/* card */
 
 .card{
-    width:90%;
-    max-width:520px;
-    background:white;
-    padding:30px;
-    border-radius:35px;
-    max-height:90vh;
-    overflow:hidden;
+
+width:95%;
+
+max-width:520px;
+
+background:white;
+
+padding:25px;
+
+border-radius:35px;
+
+text-align:center;
+
+box-shadow:0 20px 50px rgba(255,180,0,.25);
+
+animation:pop 1s;
+
 }
+
+
 
 @keyframes pop{
 
@@ -162,20 +81,68 @@ opacity:1;
 
 
 
-h1{
+/* mascot */
 
-font-size:42px;
+
+.mascot{
+
+margin-bottom:10px;
+
+animation:bounce 2s infinite;
+
+}
+
+
+.face{
+
+width:90px;
+
+height:90px;
+
+margin:auto;
+
+background:#ffd92f;
+
+border-radius:50%;
+
+display:flex;
+
+justify-content:center;
+
+align-items:center;
+
+font-size:45px;
+
+box-shadow:0 10px 20px rgba(255,180,0,.3);
+
+}
+
+
+.ears{
+
+font-size:30px;
+
 color:#f5b400;
 
 }
 
 
 
-.pika{
+.sign{
 
-font-size:55px;
+margin:12px auto;
 
-animation:bounce 1.5s infinite;
+background:#fff;
+
+padding:8px 18px;
+
+border-radius:20px;
+
+width:max-content;
+
+color:#ff6fa3;
+
+font-weight:bold;
 
 }
 
@@ -184,44 +151,93 @@ animation:bounce 1.5s infinite;
 @keyframes bounce{
 
 50%{
-transform:translateY(-15px);
+transform:translateY(-12px);
 }
 
 }
 
+
+
+/* heading */
+
+
+h1{
+
+color:#f5b400;
+
+font-size:35px;
+
+}
+
+
+
+/* message box */
 
 
 .message{
-    margin-top:20px;
-    color:#555;
-    line-height:1.7;
-    white-space:pre-line;
-    height:220px;
-    overflow-y:auto;
-    padding-right:10px;
+
+margin-top:15px;
+
+height:230px;
+
+overflow-y:auto;
+
+text-align:left;
+
+white-space:pre-line;
+
+line-height:1.7;
+
+color:#555;
+
+padding-right:8px;
+
+}
+
+
+
+/* buttons */
+
+
+.button-area{
+
+display:flex;
+
+justify-content:space-between;
+
+gap:15px;
+
+margin-top:20px;
+
+}
+
+
+
+.button-area a{
+
+flex:1;
+
 }
 
 
 
 button{
 
-margin-top:20px;
+width:100%;
 
-background:#f5b400;
+padding:13px 10px;
 
 border:none;
 
-padding:15px 35px;
-
 border-radius:50px;
+
+background:#ff6fa3;
 
 color:white;
 
-font-size:17px;
+font-size:15px;
 
 cursor:pointer;
-
-box-shadow:0 10px 20px rgba(245,180,0,.3);
 
 }
 
@@ -229,14 +245,37 @@ box-shadow:0 10px 20px rgba(245,180,0,.3);
 
 button:hover{
 
-transform:scale(1.1);
+transform:scale(1.08);
 
 }
 
 
 
-a{
-text-decoration:none;
+/* floating emojis */
+
+
+.float{
+
+position:absolute;
+
+bottom:-50px;
+
+animation:up 8s linear infinite;
+
+}
+
+
+
+@keyframes up{
+
+100%{
+
+transform:translateY(-110vh);
+
+opacity:0;
+
+}
+
 }
 
 
@@ -245,115 +284,109 @@ text-decoration:none;
 </head>
 
 
+
 <body>
+
 
 
 <div class="card">
 
 
+
 <div class="mascot">
 
 <div class="ears">
-⚡      ⚡
+⚡ ⚡
 </div>
+
 
 <div class="face">
 🥺
 </div>
 
+
 <div class="sign">
-SORRY FROM BATMAN 🦇❤️
+SORRY BATMAN 🦇❤️
 </div>
 
 </div>
+
 
 
 <h1>
-Sorry Pikachu ❤️
+Sorry Pikachu ❤️⚡
 </h1>
 
 
-<p>
-A little message from Batman 🦇
-</p>
-
-
 
 <div class="message" id="text"></div>
 
 
-<div class="message" id="text"></div>
 
+<div class="button-area">
 
-<div class="button-area" id="choice">
 
 <a href="final.html">
+
 <button>
-Yes, I forgive you ❤️
+Yes ❤️
 </button>
+
 </a>
+
 
 
 <a href="sorry.html">
+
 <button>
 Not yet 😤
 </button>
-</a>
-
-</div>
-
-</div>
-
-
-<div id="sadBox" style="display:none;">
-
-<div class="sad">
-😭
-</div>
-
-<h3>
-Aww 🥺 Batman is sorry...
-</h3>
-
-<p>
-Please forgive me Pikachu ❤️⚡
-</p>
-
-
-<a href="final.html">
-
-<button>
-Okay, forgive Batman 🦇❤️
-</button>
 
 </a>
 
+
 </div>
+
+
+
+</div>
+
+
 
 
 
 <script>
 
 
-let message = `Hi Pikachu ❤️⚡
+let message=`Hi Pikachu ❤️⚡
 
-I wanted to tell you something from my heart 🥺💛
 
-I'm really sorry that I didn't see you calling me 📱
-and couldn't gather the courage to talk to you.
+I wanted to tell you something from my heart 🥺
 
-I know i wanted to spend more time together after the movie 🎬
-and I feel bad that our plan didn't happen 🍽️💔
 
-I wasn't ignoring you 🥺
+I'm really sorry that I didn't see your call 📱
+
+I know our restaurant plan after the movie didn't happen 🍽️💔
+
+
+I wasn't ignoring you.
+
 I understand that it must have felt disappointing.
 
-You mean a lot to me ❤️(a lot)
-and I never want you to feel unimportant never ever.
 
-I hope we can make another plan soon  and i wont miss the second chance to spend time with you🌸✨
+You mean a lot to me ❤️
+
+and I never want you to feel unimportant.
+
+
+I hope we can make another plan soon 🌸✨
+
+
+This time Batman will keep the phone close 📱😄
+
 
 With care,
+
 Batman 🦇❤️`;
 
 
@@ -365,17 +398,19 @@ function typing(){
 
 if(i<message.length){
 
-document.getElementById("text").innerHTML += message[i];
+document.getElementById("text").innerHTML += message.charAt(i);
 
 i++;
 
-setTimeout(typing,20);
+setTimeout(typing,25);
 
 }
 
 }
+
 
 typing();
+
 
 
 
@@ -386,24 +421,23 @@ let e=document.createElement("div");
 e.className="float";
 
 
-let emojis=[
-"⚡",
+let list=[
 "❤️",
-"💛",
-"✨",
+"⚡",
 "🌸",
-"🥺"
+"✨",
+"💛"
 ];
 
 
-e.innerHTML=emojis[Math.floor(Math.random()*emojis.length)];
+e.innerHTML=list[Math.floor(Math.random()*list.length)];
 
 
 e.style.left=Math.random()*100+"vw";
 
 e.style.fontSize=(20+Math.random()*25)+"px";
 
-e.style.animationDuration=(5+Math.random()*5)+"s";
+e.style.animationDuration=(6+Math.random()*4)+"s";
 
 
 document.body.appendChild(e);
@@ -415,25 +449,17 @@ e.remove();
 
 },9000);
 
+
 }
 
 
 setInterval(createEmoji,900);
 
-function sad(){
-
-document.getElementById("sadBox").style.display="block";
-
-}
 
 
-function forgive(){
-
-document.getElementById("sadBox").style.display="block";
-
-}
 </script>
 
 
 </body>
+
 </html>
