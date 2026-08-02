@@ -1,17 +1,262 @@
-<!DOCTYPE html> <html lang="en"> <head> <meta charset="UTF-8"> <meta name="viewport" content="width=device-width, initial-scale=1.0"> <title>I'm Sorry ❤️</title> <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;500;700&display=swap" rel="stylesheet"> <style> *{ margin:0; padding:0; box-sizing:border-box; font-family:'Poppins',sans-serif; } body{ overflow:hidden; background:linear-gradient(135deg,#ffd6e7,#fff7fb); display:flex; justify-content:center; align-items:center; height:100vh; } .card{ width:90%; max-width:500px; background:white; padding:40px; border-radius:25px; text-align:center; box-shadow:0 20px 50px rgba(0,0,0,.15); animation:float 4s ease-in-out infinite; z-index:10; } h1{ color:#ff4d88; margin-bottom:15px; font-size:2.2rem; } p{ color:#555; line-height:1.8; margin:20px 0; } button{ background:#ff4d88; color:white; border:none; padding:15px 30px; border-radius:50px; cursor:pointer; font-size:16px; transition:.3s; } button:hover{ transform:scale(1.08); background:#ff2f72; } .hidden{ display:none; margin-top:25px; animation:fade 1s; } @keyframes fade{ from{opacity:0;transform:translateY(20px);} to{opacity:1;transform:translateY(0);} } @keyframes float{ 0%,100%{transform:translateY(0);} 50%{transform:translateY(-10px);} } .heart{ position:absolute; color:#ff6b9d; font-size:20px; animation:rise linear infinite; opacity:.8; } @keyframes rise{ 0%{ transform:translateY(100vh) scale(.5); opacity:0; } 20%{ opacity:.8; } 100%{ transform:translateY(-120px) scale(1.5); opacity:0; } } </style> </head> <body> <div class="card"> <h1>I'm Sorry ❤️</h1> <p> I know I hurt you, and I'm truly sorry. You mean a lot to me, and I regret causing you pain. I can't change what happened, but I can learn from it and do better. </p> <button onclick="showMessage()"> Click Here 🌸 </button> <div id="msg" class="hidden"> <h2 style="color:#ff4d88;">Thank You ❤️</h2> <p> Hi Pikachu ❤️,
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-I wanted to tell you something from my heart.
+<title>Sorry Pikachu ❤️</title>
 
-I'm really sorry that I didn't see your call and that I couldn't gather the courage to talk to you. I know we had hoped to spend more time together, but I wasn't confident enough at that moment, and I regret that.
+<style>
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap');
 
-I wasn't ignoring you — I just didn't handle the situation well. But I understand that it must have felt disappointing, and I'm truly sorry for making you feel that way.
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Quicksand',sans-serif;
+}
 
-You mean a lot to me, and I never want you to feel like you aren't important to me.
+body{
+    height:100vh;
+    overflow:hidden;
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    background:linear-gradient(135deg,#ffd6e8,#fff5fa);
+}
 
-I hope we can make another plan soon, and this time I'll make sure I don't miss the chance to spend some good time with you.
+/* floating flowers */
+.flower{
+    position:absolute;
+    bottom:-50px;
+    animation:floatUp linear infinite;
+    opacity:.8;
+}
 
-Thank you for taking the time to read this.
+@keyframes floatUp{
+    0%{
+        transform:translateY(0) rotate(0deg);
+        opacity:0;
+    }
+    20%{
+        opacity:1;
+    }
+    100%{
+        transform:translateY(-110vh) rotate(360deg);
+        opacity:0;
+    }
+}
+
+
+.card{
+    width:90%;
+    max-width:550px;
+    background:rgba(255,255,255,.9);
+    padding:35px;
+    border-radius:35px;
+    text-align:center;
+    box-shadow:0 20px 50px rgba(255,100,150,.25);
+    animation:bounce 4s infinite;
+    z-index:2;
+}
+
+@keyframes bounce{
+    0%,100%{
+        transform:translateY(0);
+    }
+    50%{
+        transform:translateY(-12px);
+    }
+}
+
+
+h1{
+    color:#ff5c93;
+    font-size:38px;
+}
+
+.subtitle{
+    color:#ff91b7;
+    margin-top:10px;
+}
+
+
+.message{
+    margin-top:25px;
+    color:#555;
+    font-size:17px;
+    line-height:1.8;
+    min-height:180px;
+}
+
+
+button{
+    margin-top:20px;
+    padding:15px 35px;
+    border:none;
+    border-radius:50px;
+    background:#ff6fa3;
+    color:white;
+    font-size:17px;
+    cursor:pointer;
+    box-shadow:0 10px 20px rgba(255,100,150,.3);
+    transition:.3s;
+}
+
+button:hover{
+    transform:scale(1.1);
+    background:#ff4f8b;
+}
+
+
+.hidden{
+    display:none;
+    margin-top:25px;
+    color:#ff5c93;
+    font-weight:bold;
+    animation:appear 1s;
+}
+
+@keyframes appear{
+    from{
+        opacity:0;
+        transform:scale(.8);
+    }
+    to{
+        opacity:1;
+        transform:scale(1);
+    }
+}
+
+
+.heart{
+    font-size:35px;
+    animation:pulse 1.5s infinite;
+}
+
+@keyframes pulse{
+    50%{
+        transform:scale(1.3);
+    }
+}
+
+</style>
+</head>
+
+
+<body>
+
+
+<div class="card">
+
+<div class="heart">❤️</div>
+
+<h1>Hi Pikachu 🌸</h1>
+
+<p class="subtitle">
+A little message from Batman 🦇
+</p>
+
+
+<div class="message" id="text"></div>
+
+
+<button onclick="showLove()">
+Open My Heart 💌
+</button>
+
+
+<div class="hidden" id="love">
+Thank you for reading this ❤️<br>
+I hope we can smile together again 🌸
+</div>
+
+
+</div>
+
+
+
+<script>
+
+const message = 
+`I wanted to tell you something from my heart ❤️
+
+I'm really sorry that I didn't see your call and couldn't gather the courage to talk to you.
+
+I know we wanted to spend more time together after the movie, and I feel bad that our restaurant plan didn't happen.
+
+I wasn't ignoring you. I just didn't handle the moment well.
+
+You mean a lot to me, and I never want you to feel unimportant.
+
+I hope we can make another plan soon, and this time I won't miss the chance to spend time with you.
 
 With care,
-Batman 🦇❤️
- </p> <p style="font-size:28px;"> 🌹🤍🌸 </p> </div> </div> <script> function showMessage(){ document.getElementById("msg").style.display="block"; } function createHeart(){ const heart=document.createElement("div"); heart.className="heart"; heart.innerHTML=["❤","💖","💕","💗","🌸"][Math.floor(Math.random()*5)]; heart.style.left=Math.random()*100+"vw"; heart.style.fontSize=(15+Math.random()*25)+"px"; heart.style.animationDuration=(5+Math.random()*5)+"s"; document.body.appendChild(heart); setTimeout(()=>{ heart.remove(); },10000); } setInterval(createHeart,300); </script> </body> </html>
+Batman 🦇❤️`;
+
+
+let i=0;
+
+function typing(){
+    if(i<message.length){
+        document.getElementById("text").innerHTML += message.charAt(i);
+        i++;
+        setTimeout(typing,35);
+    }
+}
+
+typing();
+
+
+
+function showLove(){
+    document.getElementById("love").style.display="block";
+}
+
+
+
+function createFlower(){
+
+    let flower=document.createElement("div");
+
+    flower.className="flower";
+
+    let flowers=["🌸","🌷","🌹","💮","❤️"];
+
+    flower.innerHTML=flowers[Math.floor(Math.random()*flowers.length)];
+
+    flower.style.left=Math.random()*100+"vw";
+
+    flower.style.fontSize=(20+Math.random()*25)+"px";
+
+    flower.style.animationDuration=(5+Math.random()*5)+"s";
+
+
+    document.body.appendChild(flower);
+
+
+    setTimeout(()=>{
+        flower.remove();
+    },10000);
+
+}
+
+
+setInterval(createFlower,400);
+
+
+</script>
+
+
+</body>
+</html>
+<button onclick="forgive()">
+    Forgive Batman? 🦇❤️
+</button>
+
+<div id="answer" class="hidden">
+    🥺 Thank you Pikachu ❤️<br>
+    I'll try my best to make you smile again 🌸
+</div>
+function forgive(){
+    document.getElementById("answer").style.display="block";
