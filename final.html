@@ -1,0 +1,299 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Batman is Sorry 🦇💔</title>
+
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap');
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Quicksand',sans-serif;
+}
+
+
+body{
+
+min-height:100vh;
+background:linear-gradient(135deg,#c9d6ff,#fbc2eb);
+display:flex;
+justify-content:center;
+align-items:center;
+overflow:hidden;
+
+}
+
+
+
+.card{
+
+width:90%;
+max-width:550px;
+
+background:white;
+
+padding:35px;
+
+border-radius:35px;
+
+text-align:center;
+
+box-shadow:0 20px 50px rgba(0,0,0,.15);
+
+animation:show 1s;
+
+}
+
+
+
+@keyframes show{
+
+from{
+transform:scale(.6);
+opacity:0;
+}
+
+to{
+transform:scale(1);
+opacity:1;
+}
+
+}
+
+
+
+.sad{
+
+font-size:80px;
+
+animation:sadmove 1.5s infinite;
+
+}
+
+
+
+@keyframes sadmove{
+
+50%{
+transform:translateY(-15px);
+}
+
+}
+
+
+
+h1{
+
+color:#555;
+
+font-size:35px;
+
+}
+
+
+
+.message{
+
+margin-top:25px;
+
+text-align:left;
+
+line-height:1.8;
+
+color:#555;
+
+white-space:pre-line;
+
+height:260px;
+
+overflow-y:auto;
+
+}
+
+
+
+button{
+
+margin-top:25px;
+
+padding:15px 35px;
+
+border:none;
+
+border-radius:50px;
+
+background:#ff6fa3;
+
+color:white;
+
+font-size:17px;
+
+cursor:pointer;
+
+}
+
+
+
+button:hover{
+
+transform:scale(1.1);
+
+}
+
+
+
+.float{
+
+position:absolute;
+
+bottom:-50px;
+
+animation:up 8s linear infinite;
+
+}
+
+
+
+@keyframes up{
+
+0%{
+transform:translateY(0);
+opacity:0;
+}
+
+20%{
+opacity:1;
+}
+
+100%{
+transform:translateY(-110vh);
+opacity:0;
+}
+
+}
+
+
+a{
+text-decoration:none;
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<div class="card">
+
+
+<div class="sad">
+🥺💔
+</div>
+
+
+<h1>
+Batman is really sorry 🦇
+</h1>
+
+
+<div class="message">
+
+Pikachu ❤️⚡
+<p>
+
+Pikachu ⚡❤️
+
+Thank you for giving Batman another chance 🦇✨
+
+I really appreciate it.
+
+I don't want this page to be just a sorry message...
+I want it to be a reminder that our friendship matters ❤️
+
+The missed the chance and cancelled plan was a small moment,
+but I hope we create many more happy memories together 🌸
+
+Next movie? 🎬🍿
+
+This time Batman will keep the you close 📱😄
+
+Stay awesome, Pikachu ⚡💛
+
+With care,
+Batman 🦇❤️
+
+</p>
+</div>
+
+
+<a href="final.html">
+
+<button>
+Okay Batman, I forgive you ❤️
+</button>
+
+</a>
+
+
+</div>
+
+
+
+<script>
+
+
+function create(){
+
+let e=document.createElement("div");
+
+e.className="float";
+
+let arr=[
+"💔",
+"🥺",
+"❤️",
+"🌸",
+"✨"
+];
+
+e.innerHTML=arr[Math.floor(Math.random()*arr.length)];
+
+e.style.left=Math.random()*100+"vw";
+
+e.style.fontSize=(20+Math.random()*25)+"px";
+
+e.style.animationDuration=(5+Math.random()*5)+"s";
+
+
+document.body.appendChild(e);
+
+
+setTimeout(()=>{
+
+e.remove();
+
+},9000);
+
+
+}
+
+
+setInterval(create,700);
+
+
+</script>
+
+
+</body>
+
+</html>
