@@ -1,0 +1,266 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Sorry Pikachu ❤️</title>
+
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap');
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Quicksand',sans-serif;
+}
+
+
+body{
+height:100vh;
+overflow:hidden;
+background:linear-gradient(135deg,#ffd6e8,#fff7fb);
+display:flex;
+justify-content:center;
+align-items:center;
+}
+
+
+.heart{
+position:absolute;
+bottom:-40px;
+animation:float 8s linear infinite;
+}
+
+
+@keyframes float{
+
+0%{
+transform:translateY(0);
+opacity:0;
+}
+
+20%{
+opacity:1;
+}
+
+100%{
+transform:translateY(-110vh);
+opacity:0;
+}
+
+}
+
+
+
+.card{
+
+width:90%;
+max-width:520px;
+
+background:white;
+
+padding:35px;
+
+border-radius:35px;
+
+box-shadow:0 20px 50px rgba(255,100,150,.25);
+
+text-align:center;
+
+animation:show 1s;
+
+}
+
+
+
+@keyframes show{
+
+from{
+transform:scale(.7);
+opacity:0;
+}
+
+to{
+transform:scale(1);
+opacity:1;
+}
+
+}
+
+
+
+h1{
+
+color:#ff5c93;
+
+font-size:40px;
+
+}
+
+
+
+.message{
+
+margin-top:25px;
+
+color:#555;
+
+line-height:1.8;
+
+white-space:pre-line;
+
+min-height:260px;
+
+text-align:left;
+
+}
+
+
+
+button{
+
+margin-top:20px;
+
+background:#ff6fa3;
+
+border:none;
+
+color:white;
+
+padding:15px 35px;
+
+border-radius:50px;
+
+font-size:17px;
+
+cursor:pointer;
+
+}
+
+
+
+button:hover{
+
+transform:scale(1.1);
+
+}
+
+
+
+a{
+text-decoration:none;
+}
+
+</style>
+
+</head>
+
+
+<body>
+
+
+<div class="card">
+
+
+<h1>
+I'm Sorry Pikachu ❤️
+</h1>
+
+
+<div class="message" id="text"></div>
+
+
+<a href="final.html">
+
+<button>
+Forgive Batman? 🦇❤️
+</button>
+
+</a>
+
+
+</div>
+
+
+
+<script>
+
+
+let message = `I wanted to tell you something from my heart ❤️
+
+I'm really sorry that I didn't see your call and couldn't gather the courage to talk to you.
+
+I know we wanted to spend more time together after the movie, and I feel bad that our restaurant plan didn't happen.
+
+I wasn't ignoring you. I understand that it must have felt disappointing.
+
+You mean a lot to me, and I never want you to feel unimportant.
+
+I hope we can make another plan soon, and this time I'll make sure I don't miss the chance.
+
+With care,
+Batman 🦇❤️`;
+
+
+
+let i=0;
+
+
+function typing(){
+
+if(i<message.length){
+
+document.getElementById("text").innerHTML += message[i];
+
+i++;
+
+setTimeout(typing,35);
+
+}
+
+}
+
+
+typing();
+
+
+
+function createHeart(){
+
+let h=document.createElement("div");
+
+h.className="heart";
+
+h.innerHTML=["❤️","💖","🌸","💕"][Math.floor(Math.random()*4)];
+
+h.style.left=Math.random()*100+"vw";
+
+h.style.fontSize=(15+Math.random()*25)+"px";
+
+h.style.animationDuration=(5+Math.random()*5)+"s";
+
+
+document.body.appendChild(h);
+
+
+setTimeout(()=>{
+
+h.remove();
+
+},9000);
+
+}
+
+
+setInterval(createHeart,400);
+
+
+</script>
+
+
+</body>
+</html>
