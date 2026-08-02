@@ -6,27 +6,33 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Batman is Sorry 🦇💔</title>
+<title>Thank You Pikachu ❤️</title>
 
 <style>
 
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap');
 
+
 *{
-    margin:0;
-    padding:0;
-    box-sizing:border-box;
-    font-family:'Quicksand',sans-serif;
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:'Quicksand',sans-serif;
 }
 
 
 body{
 
 min-height:100vh;
-background:linear-gradient(135deg,#c9d6ff,#fbc2eb);
+
+background:linear-gradient(135deg,#ffe259,#ffa751);
+
 display:flex;
+
 justify-content:center;
+
 align-items:center;
+
 overflow:hidden;
 
 }
@@ -36,28 +42,29 @@ overflow:hidden;
 .card{
 
 width:90%;
+
 max-width:550px;
 
 background:white;
 
-padding:35px;
+padding:40px;
 
-border-radius:35px;
+border-radius:40px;
 
 text-align:center;
 
-box-shadow:0 20px 50px rgba(0,0,0,.15);
+box-shadow:0 20px 50px rgba(0,0,0,.2);
 
-animation:show 1s;
+animation:appear 1.2s;
 
 }
 
 
 
-@keyframes show{
+@keyframes appear{
 
 from{
-transform:scale(.6);
+transform:scale(.5);
 opacity:0;
 }
 
@@ -70,17 +77,17 @@ opacity:1;
 
 
 
-.sad{
+.batman{
 
 font-size:80px;
 
-animation:sadmove 1.5s infinite;
+animation:float 2s infinite;
 
 }
 
 
 
-@keyframes sadmove{
+@keyframes float{
 
 50%{
 transform:translateY(-15px);
@@ -92,29 +99,33 @@ transform:translateY(-15px);
 
 h1{
 
-color:#555;
+color:#ff9f00;
 
-font-size:35px;
+font-size:38px;
 
 }
 
 
 
-.message{
+p{
 
 margin-top:25px;
 
-text-align:left;
+font-size:18px;
 
 line-height:1.8;
 
 color:#555;
 
-white-space:pre-line;
+}
 
-height:260px;
 
-overflow-y:auto;
+
+.hearts{
+
+font-size:35px;
+
+margin-top:20px;
 
 }
 
@@ -124,15 +135,15 @@ button{
 
 margin-top:25px;
 
-padding:15px 35px;
-
-border:none;
-
-border-radius:50px;
-
 background:#ff6fa3;
 
 color:white;
+
+border:none;
+
+padding:15px 35px;
+
+border-radius:50px;
 
 font-size:17px;
 
@@ -141,13 +152,11 @@ cursor:pointer;
 }
 
 
-
 button:hover{
 
 transform:scale(1.1);
 
 }
-
 
 
 .float{
@@ -161,17 +170,7 @@ animation:up 8s linear infinite;
 }
 
 
-
 @keyframes up{
-
-0%{
-transform:translateY(0);
-opacity:0;
-}
-
-20%{
-opacity:1;
-}
 
 100%{
 transform:translateY(-110vh);
@@ -180,10 +179,6 @@ opacity:0;
 
 }
 
-
-a{
-text-decoration:none;
-}
 
 </style>
 
@@ -196,23 +191,19 @@ text-decoration:none;
 <div class="card">
 
 
-<div class="sad">
-🥺💔
+<div class="batman">
+🦇❤️
 </div>
 
 
 <h1>
-Batman is really sorry 🦇
+Yay Pikachu ⚡
 </h1>
 
-
-<div class="message">
-
-Pikachu ❤️⚡
 <p>
 
 Pikachu ⚡❤️
-
+    
 Thank you for giving Batman another chance 🦇✨
 
 I really appreciate it.
@@ -220,12 +211,12 @@ I really appreciate it.
 I don't want this page to be just a sorry message...
 I want it to be a reminder that our friendship matters ❤️
 
-The missed the chance and cancelled plan was a small moment,
+I not seeing u call me and the cancelled plan was a not a small moment,
 but I hope we create many more happy memories together 🌸
 
 Next movie? 🎬🍿
 
-This time Batman will keep the you close 📱😄
+This time Batman will keep the pikachu close 📱😄
 
 Stay awesome, Pikachu ⚡💛
 
@@ -233,16 +224,15 @@ With care,
 Batman 🦇❤️
 
 </p>
+    
+<div class="hearts">
+❤️ ⚡ 🌸 💛 ✨
 </div>
 
 
-<a href="final.html">
-
-<button>
-Okay Batman, I forgive you ❤️
+<button onclick="celebrate()">
+One More Smile Please 😊
 </button>
-
-</a>
 
 
 </div>
@@ -252,25 +242,34 @@ Okay Batman, I forgive you ❤️
 <script>
 
 
+function celebrate(){
+
+alert("Yayyy Pikachu ⚡❤️ Batman is happy now 🦇");
+
+}
+
+
+
 function create(){
 
 let e=document.createElement("div");
 
 e.className="float";
 
-let arr=[
-"💔",
-"🥺",
+let emojis=[
 "❤️",
+"⚡",
 "🌸",
-"✨"
+"✨",
+"💛"
 ];
 
-e.innerHTML=arr[Math.floor(Math.random()*arr.length)];
+
+e.innerHTML=emojis[Math.floor(Math.random()*emojis.length)];
 
 e.style.left=Math.random()*100+"vw";
 
-e.style.fontSize=(20+Math.random()*25)+"px";
+e.style.fontSize=(20+Math.random()*30)+"px";
 
 e.style.animationDuration=(5+Math.random()*5)+"s";
 
@@ -284,11 +283,10 @@ e.remove();
 
 },9000);
 
-
 }
 
 
-setInterval(create,700);
+setInterval(create,600);
 
 
 </script>
