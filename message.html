@@ -5,51 +5,53 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-<title>Sorry Pikachu ❤️</title>
+<title>Sorry Pikachu ⚡❤️</title>
 
 <style>
 
 @import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@400;600;700&display=swap');
 
 *{
-margin:0;
-padding:0;
-box-sizing:border-box;
-font-family:'Quicksand',sans-serif;
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+    font-family:'Quicksand',sans-serif;
 }
 
 
 body{
-height:100vh;
-overflow:hidden;
-background:linear-gradient(135deg,#ffd6e8,#fff7fb);
-display:flex;
-justify-content:center;
-align-items:center;
+    height:100vh;
+    overflow:hidden;
+    background:linear-gradient(135deg,#fff3a8,#ffd6e8);
+    display:flex;
+    justify-content:center;
+    align-items:center;
 }
 
 
-.heart{
-position:absolute;
-bottom:-40px;
-animation:float 8s linear infinite;
+/* floating emojis */
+
+.float{
+    position:absolute;
+    bottom:-50px;
+    animation:up 8s linear infinite;
 }
 
 
-@keyframes float{
+@keyframes up{
 
 0%{
-transform:translateY(0);
-opacity:0;
+    transform:translateY(0) rotate(0deg);
+    opacity:0;
 }
 
 20%{
-opacity:1;
+    opacity:1;
 }
 
 100%{
-transform:translateY(-110vh);
-opacity:0;
+    transform:translateY(-110vh) rotate(360deg);
+    opacity:0;
 }
 
 }
@@ -61,23 +63,23 @@ opacity:0;
 width:90%;
 max-width:520px;
 
-background:white;
+background:rgba(255,255,255,.92);
 
 padding:35px;
 
 border-radius:35px;
 
-box-shadow:0 20px 50px rgba(255,100,150,.25);
-
 text-align:center;
 
-animation:show 1s;
+box-shadow:0 20px 50px rgba(255,180,0,.25);
+
+animation:pop 1s;
 
 }
 
 
 
-@keyframes show{
+@keyframes pop{
 
 from{
 transform:scale(.7);
@@ -95,9 +97,28 @@ opacity:1;
 
 h1{
 
-color:#ff5c93;
+font-size:42px;
+color:#f5b400;
 
-font-size:40px;
+}
+
+
+
+.pika{
+
+font-size:55px;
+
+animation:bounce 1.5s infinite;
+
+}
+
+
+
+@keyframes bounce{
+
+50%{
+transform:translateY(-15px);
+}
 
 }
 
@@ -105,7 +126,9 @@ font-size:40px;
 
 .message{
 
-margin-top:25px;
+margin-top:20px;
+
+text-align:left;
 
 color:#555;
 
@@ -115,8 +138,6 @@ white-space:pre-line;
 
 min-height:260px;
 
-text-align:left;
-
 }
 
 
@@ -125,19 +146,21 @@ button{
 
 margin-top:20px;
 
-background:#ff6fa3;
+background:#f5b400;
 
 border:none;
-
-color:white;
 
 padding:15px 35px;
 
 border-radius:50px;
 
+color:white;
+
 font-size:17px;
 
 cursor:pointer;
+
+box-shadow:0 10px 20px rgba(245,180,0,.3);
 
 }
 
@@ -155,6 +178,7 @@ a{
 text-decoration:none;
 }
 
+
 </style>
 
 </head>
@@ -166,18 +190,30 @@ text-decoration:none;
 <div class="card">
 
 
+<div class="pika">
+⚡
+</div>
+
+
 <h1>
-I'm Sorry Pikachu ❤️
+Sorry Pikachu ❤️
 </h1>
+
+
+<p>
+A little message from Batman 🦇
+</p>
+
 
 
 <div class="message" id="text"></div>
 
 
+
 <a href="final.html">
 
 <button>
-Forgive Batman? 🦇❤️
+Forgive Batman? ⚡❤️
 </button>
 
 </a>
@@ -190,17 +226,23 @@ Forgive Batman? 🦇❤️
 <script>
 
 
-let message = `I wanted to tell you something from my heart ❤️
+let message = `Hi Pikachu ❤️⚡
 
-I'm really sorry that I didn't see your call and couldn't gather the courage to talk to you.
+I wanted to tell you something from my heart 🥺💛
 
-I know we wanted to spend more time together after the movie, and I feel bad that our restaurant plan didn't happen.
+I'm really sorry that I didn't see your call 📱
+and couldn't gather the courage to talk to you.
 
-I wasn't ignoring you. I understand that it must have felt disappointing.
+I know we wanted to spend more time together after the movie 🎬
+and I feel bad that our restaurant plan didn't happen 🍽️💔
 
-You mean a lot to me, and I never want you to feel unimportant.
+I wasn't ignoring you 🥺
+I understand that it must have felt disappointing.
 
-I hope we can make another plan soon, and this time I'll make sure I don't miss the chance.
+You mean a lot to me ❤️
+and I never want you to feel unimportant.
+
+I hope we can make another plan soon 🌸✨
 
 With care,
 Batman 🦇❤️`;
@@ -224,39 +266,50 @@ setTimeout(typing,35);
 
 }
 
-
 typing();
 
 
 
-function createHeart(){
+function createEmoji(){
 
-let h=document.createElement("div");
+let e=document.createElement("div");
 
-h.className="heart";
-
-h.innerHTML=["❤️","💖","🌸","💕"][Math.floor(Math.random()*4)];
-
-h.style.left=Math.random()*100+"vw";
-
-h.style.fontSize=(15+Math.random()*25)+"px";
-
-h.style.animationDuration=(5+Math.random()*5)+"s";
+e.className="float";
 
 
-document.body.appendChild(h);
+let emojis=[
+"⚡",
+"❤️",
+"💛",
+"✨",
+"🌸",
+"🥺"
+];
+
+
+e.innerHTML=emojis[Math.floor(Math.random()*emojis.length)];
+
+
+e.style.left=Math.random()*100+"vw";
+
+e.style.fontSize=(20+Math.random()*25)+"px";
+
+e.style.animationDuration=(5+Math.random()*5)+"s";
+
+
+document.body.appendChild(e);
 
 
 setTimeout(()=>{
 
-h.remove();
+e.remove();
 
 },9000);
 
 }
 
 
-setInterval(createHeart,400);
+setInterval(createEmoji,400);
 
 
 </script>
